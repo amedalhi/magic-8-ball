@@ -20,8 +20,18 @@ const answers = [
   "Very doubtful.",
 ];
 
-//Randomize an index number and then associate with a string from the answers array
-let randomAnswerIndex = Math.floor(Math.random() * answers.length);
-let randomAnswer = answers[randomAnswerIndex];
+//Make button ask trigger the response
+const askButton = document.getElementById("askButton");
 
+askButton.addEventListener("click", function () {
+  //Randomize an index number and then associate with a string from the answers array
+  let randomAnswerIndex = Math.floor(Math.random() * answers.length);
+  let randomAnswer = answers[randomAnswerIndex];
+
+  //populate html with answer
+  let randomAnswerContainer = document.getElementById("response");
+  randomAnswerContainer.innerHTML = randomAnswer;
+});
+
+console.log(askButton);
 console.log(randomAnswer);
