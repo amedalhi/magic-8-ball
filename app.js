@@ -31,7 +31,10 @@ askButton.addEventListener("click", function () {
   //populate html with answer
   let randomAnswerContainer = document.getElementById("response");
   randomAnswerContainer.innerHTML = randomAnswer;
-});
 
-console.log(askButton);
-console.log(randomAnswer);
+  //fade out Input Field
+  let inputDiv = document.querySelector(".input-div");
+  inputDiv.classList.add("fade-out");
+
+  console.log(askButton);
+});

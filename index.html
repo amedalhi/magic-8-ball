@@ -4,21 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Monoton&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
     <title>Magic 8 Ball</title>
   </head>
   <body>
-    <h1>Magic 8 Ball</h1>
-    <div class="inputDiv">
-      <label for="question">What is your question?</label>
-      <br />
-      <input type="text" />
-      <br />
-      <button id="askButton">Ask away</button>
-    </div>
-    <div class="responseDiv">
-      <p id="response"></p>
+    <div class="container">
+      <div class="main-container flex-column">
+        <h1 class="main-title">Magic 8 Ball</h1>
+        <div class="input-div flex-column">
+          <label for="question">Ask me anything...</label>
+          <br />
+          <input class="input-text" type="text" />
+          <br />
+          <button class="input-button" id="askButton">Shake</button>
+        </div>
+          <div class="eight-ball">
+            <div class="eight-ball-glass">
+              <div class="response-div">
+                <p class="response-text" id="response"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="app.js"></script>
   </body>
