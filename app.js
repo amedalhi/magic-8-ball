@@ -27,7 +27,8 @@ const inputDiv = document.querySelector(".input-to-fade");
 const inputTextDisplay = document.querySelector(".input-text-display");
 const eightBall = document.querySelector(".eight-ball");
 
-askButton.addEventListener("click", function () {
+//Function Ask Question
+const askQuestionButton = function () {
   let inputTextToDisplay = document.getElementById("input-text").value;
   console.log(inputTextToDisplay);
   if (inputTextToDisplay === "") {
@@ -51,9 +52,9 @@ askButton.addEventListener("click", function () {
     //fade out button text
     askAgainButton.classList.add("fade-in");
   }
-});
+};
 
-askAgainButton.addEventListener("click", function () {
+const askAnotherQuestionButton = function () {
   //clear glass
   randomAnswerContainer.innerHTML = "";
   //Fade out ask again button
@@ -67,4 +68,25 @@ askAgainButton.addEventListener("click", function () {
   randomAnswerContainer.classList.remove("slow-fade-in");
   //reset question display
   inputTextDisplay.innerHTML = "";
+};
+
+askButton.addEventListener("click", function () {
+  askQuestionButton();
 });
+
+askAgainButton.addEventListener("click", function () {
+  askAnotherQuestionButton();
+});
+
+document.addEventListener("keyup", function (event) {
+  console.log(event.key);
+  if (event.key === "Enter") {
+    askQuestionButton();
+  }
+});
+
+// askAgainButton.addEventListener("click", function (event) {
+//   if (event.key === "Enter") {
+//     askAnotherQuestionButton();
+//   }
+// });
