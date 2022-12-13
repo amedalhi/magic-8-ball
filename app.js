@@ -24,23 +24,33 @@ const askButton = document.getElementById("askButton");
 const askAgainButton = document.getElementById("askAgainButton");
 const randomAnswerContainer = document.getElementById("response");
 const inputDiv = document.querySelector(".input-to-fade");
+const inputTextDisplay = document.querySelector(".input-text-display");
 const eightBall = document.querySelector(".eight-ball");
 
 askButton.addEventListener("click", function () {
-  //Randomize an index number and then associate with a string from the answers array
-  let randomAnswerIndex = Math.floor(Math.random() * answers.length);
-  let randomAnswer = answers[randomAnswerIndex];
-  //shake
-  eightBall.classList.toggle("shaking");
-  //populate html with answer
-  randomAnswerContainer.innerHTML = randomAnswer;
-  randomAnswerContainer.classList.add("slow-fade-in");
+  let inputTextToDisplay = document.getElementById("input-text").value;
+  console.log(inputTextToDisplay);
+  if (inputTextToDisplay === "") {
+    alert("Please enter a question");
+  } else {
+    //Randomize an index number and then associate with a string from the answers array
+    let randomAnswerIndex = Math.floor(Math.random() * answers.length);
+    let randomAnswer = answers[randomAnswerIndex];
+    //shake
+    eightBall.classList.toggle("shaking");
+    //populate html with answer
+    randomAnswerContainer.innerHTML = randomAnswer;
+    randomAnswerContainer.classList.add("slow-fade-in");
+    //fade out Input Field
+    inputDiv.classList.add("fade-out");
+    //add input text above ball
 
-  console.log(randomAnswerContainer);
-  //fade out Input Field
-  inputDiv.classList.add("fade-out");
-  //fade out button text
-  askAgainButton.classList.add("fade-in");
+    inputTextDisplay.innerHTML = inputTextToDisplay;
+    //remove the the input field
+    inputDiv.style.display = "none";
+    //fade out button text
+    askAgainButton.classList.add("fade-in");
+  }
 });
 
 askAgainButton.addEventListener("click", function () {
@@ -50,8 +60,11 @@ askAgainButton.addEventListener("click", function () {
   askAgainButton.classList.remove("fade-in");
   //make input visible again
   inputDiv.classList.remove("fade-out");
+  inputDiv.style.display = "";
   //reset shake
   eightBall.classList.remove("shaking");
   //reset fade
   randomAnswerContainer.classList.remove("slow-fade-in");
+  //reset question display
+  inputTextDisplay.innerHTML = "";
 });

@@ -51,6 +51,11 @@ body {
   background-color: #e4dfda;
 }
 
+.input-text-display {
+  font-size: 3rem;
+  color: #293132;
+}
+
 .input-button {
   font-size: 2rem;
   color: #e4dfda;
