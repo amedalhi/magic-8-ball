@@ -20,17 +20,18 @@ const answers = [
   "Very doubtful.",
 ];
 
-const askButton = document.getElementById("askButton");
-const askAgainButton = document.getElementById("askAgainButton");
+//List of DOM variables
+const askQuestionButton = document.getElementById("askButton");
+const askAnotherQuestionButton = document.getElementById("askAgainButton");
 const randomAnswerContainer = document.getElementById("response");
-const inputDiv = document.querySelector(".input-to-fade");
+const inputSection = document.querySelector(".input-to-fade");
 const inputTextDisplay = document.querySelector(".input-text-display");
 const eightBall = document.querySelector(".eight-ball");
 
-//Function Ask Question
-const askQuestionButton = function () {
+//Ask Question
+const askQuestion = function () {
   let inputTextToDisplay = document.getElementById("input-text").value;
-  console.log(inputTextToDisplay);
+  //Error handling: no question is asked
   if (inputTextToDisplay === "") {
     alert("Please enter a question");
   } else {
@@ -42,49 +43,53 @@ const askQuestionButton = function () {
     //populate html with answer
     randomAnswerContainer.innerHTML = randomAnswer;
     randomAnswerContainer.classList.add("slow-fade-in");
-    //fade out Input Field
-    inputDiv.classList.add("fade-out");
-    //add input text above ball
-
+    //fade out Input Field FIXME
+    inputSection.classList.add("fade-out");
+    //add question text above eight ball
     inputTextDisplay.innerHTML = inputTextToDisplay;
     //remove the the input field
-    inputDiv.style.display = "none";
-    //fade out button text
-    askAgainButton.classList.add("fade-in");
+    inputSection.style.display = "none";
+    //fade in Ask Another Questions button
+    askAnotherQuestionButton.classList.add("fade-in");
   }
 };
 
-const askAnotherQuestionButton = function () {
+//Ask Another Question
+const askAnotherQuestion = function () {
   //clear glass
   randomAnswerContainer.innerHTML = "";
   //Fade out ask again button
-  askAgainButton.classList.remove("fade-in");
+  askAnotherQuestionButton.classList.remove("fade-in");
   //make input visible again
-  inputDiv.classList.remove("fade-out");
-  inputDiv.style.display = "";
+  inputSection.classList.remove("fade-out");
+  inputSection.style.display = "";
   //reset shake
   eightBall.classList.remove("shaking");
   //reset fade
   randomAnswerContainer.classList.remove("slow-fade-in");
   //reset question display
   inputTextDisplay.innerHTML = "";
+  //reset input field
+  document.getElementById("input-text").value = "";
 };
 
-askButton.addEventListener("click", function () {
-  askQuestionButton();
+//Function Triggers
+askQuestionButton.addEventListener("click", function () {
+  askQuestion();
 });
 
-askAgainButton.addEventListener("click", function () {
-  askAnotherQuestionButton();
+askAnotherQuestionButton.addEventListener("click", function () {
+  askAnotherQuestion();
 });
 
 document.addEventListener("keyup", function (event) {
   console.log(event.key);
   if (event.key === "Enter") {
-    askQuestionButton();
+    askQuestion();
   }
 });
 
+FIXME;
 // askAgainButton.addEventListener("click", function (event) {
 //   if (event.key === "Enter") {
 //     askAnotherQuestionButton();
