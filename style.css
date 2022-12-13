@@ -4,7 +4,8 @@
 }
 
 body {
-  background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+  /* background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%); */
+  background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
   height: 100vh;
   font-family: "Berkshire Swash", cursive;
 }
@@ -29,7 +30,11 @@ body {
 .main-title {
   font-size: 4rem;
   font-family: "Monoton", cursive;
-  color: white;
+  color: #351e29;
+}
+
+.question-text {
+  color: #293132;
 }
 
 .input-div {
@@ -59,6 +64,7 @@ body {
       rgba(0, 0, 0, 0.25) 200%
     );
   background-blend-mode: multiply;
+  cursor: pointer;
 }
 
 /*Output*/
@@ -90,16 +96,23 @@ body {
     #5753c9 48%,
     #6e7ff3 100%
   );
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.response-div {
-  position: absolute;
-  top: 100px;
-}
+/* .response-div {
+  opacity: 0;
+} */
 
 .response-text {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
+  opacity: 0;
+}
+
+.ask-again {
+  opacity: 0;
 }
 
 /* Fading Animation */
@@ -112,4 +125,38 @@ body {
 .button-fade-in {
   transition: opacity 2s;
   opacity: 1;
+}
+
+.fade-in {
+  transition: opacity 1s;
+  opacity: 1;
+}
+
+.slow-fade-in {
+  transition: opacity 2s;
+  opacity: 1;
+}
+
+/* Shaking */
+
+@keyframes horizontal-shaking {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shaking {
+  animation: horizontal-shaking 0.5s 2;
 }

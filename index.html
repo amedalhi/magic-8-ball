@@ -15,10 +15,12 @@
       <div class="main-container flex-column">
         <h1 class="main-title">Magic 8 Ball</h1>
         <div class="input-div flex-column">
-          <label for="question">Ask me anything...</label>
-          <br />
-          <input class="input-text" type="text" />
-          <br />
+          <div class="input-to-fade flex-column">
+            <label class="question-text" for="question">Ask me anything...</label>
+            <br />
+            <input class="input-text" type="text" />
+            <br />
+          </div>
           <button class="input-button" id="askButton">Shake</button>
         </div>
           <div class="eight-ball">
@@ -27,6 +29,9 @@
                 <p class="response-text" id="response"></p>
               </div>
             </div>
+          </div>
+          <div>
+            <button class="ask-again input-button" id="askAgainButton">Ask Again?</button>
           </div>
         </div>
       </div>
