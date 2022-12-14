@@ -17,9 +17,19 @@
   }
 }
 
-/* @media (max-width: 570px) {
-  .eight-ball {
-    width: 450px;
-    height: 450px;
+@media (max-width: 570px) {
+  .main-title {
+    font-size: 3rem;
   }
-} */
+  .eight-ball {
+    width: 400px;
+    height: 400px;
+  }
+
+  .eight-ball-glass {
+    width: 240px;
+    height: 240px;
+    top: 80px;
+    left: 80px;
+  }
+}
