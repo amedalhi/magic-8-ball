@@ -83,7 +83,6 @@ askAnotherQuestionButton.addEventListener("click", function () {
 });
 
 document.addEventListener("keyup", function (event) {
-  console.log(event.key);
   if (event.key === "Enter") {
     askQuestion();
   }
