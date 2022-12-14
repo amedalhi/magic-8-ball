@@ -23,21 +23,30 @@
   }
 
   .main-container {
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .main-title {
     font-size: 3rem;
   }
+
+  .input-button {
+    font-size: 1.5rem;
+  }
+
   .eight-ball {
-    width: 400px;
-    height: 400px;
+    width: 380px;
+    height: 380px;
   }
 
   .eight-ball-glass {
-    width: 240px;
-    height: 240px;
-    top: 80px;
-    left: 80px;
+    width: 228px;
+    height: 228px;
+    top: 76px;
+    left: 76px;
+  }
+
+  .ask-again-div {
+    padding-top: 1.25rem;
   }
 }
