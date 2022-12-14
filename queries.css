@@ -18,6 +18,14 @@
 }
 
 @media (max-width: 570px) {
+  .container {
+    margin-top: 1.5rem;
+  }
+
+  .main-container {
+    gap: 1.5rem;
+  }
+
   .main-title {
     font-size: 3rem;
   }
