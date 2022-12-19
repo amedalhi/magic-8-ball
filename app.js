@@ -28,7 +28,7 @@ const inputSection = document.querySelector(".input-to-fade");
 const inputTextDisplay = document.querySelector(".input-text-display");
 const eightBall = document.querySelector(".eight-ball");
 
-//Ask Question
+//-------------------Ask Question
 const askQuestion = function () {
   let inputTextToDisplay = document.getElementById("input-text").value;
   //Error handling: no question is asked
@@ -54,7 +54,7 @@ const askQuestion = function () {
   }
 };
 
-//Ask Another Question
+//---------------------Ask Another Question
 const askAnotherQuestion = function () {
   //clear glass
   randomAnswerContainer.innerHTML = "";
@@ -73,7 +73,7 @@ const askAnotherQuestion = function () {
   document.getElementById("input-text").value = "";
 };
 
-//Function Triggers
+//-------------------------Function Triggers
 askQuestionButton.addEventListener("click", function () {
   askQuestion();
 });
